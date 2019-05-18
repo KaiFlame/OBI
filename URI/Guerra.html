@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <script>
+            //(1 ≤ S ≤ 105)
+            //(1 ≤ Qi ≤ 109 para i = 1, ..., S)
+            var S = prompt();
+
+            var leitura = prompt();
+            var Qi = leitura.split(" ");
+            Qi.sort();
+
+            leitura = prompt();
+            var Ni = leitura.split(" ");
+            Ni.sort();
+
+            var qtdGanhou = 0;
+            var fodaum = Ni[S];
+
+            for(var i = S-1; i >= 0; i--)
+            {
+                if(Ni[i] > Qi[i])
+                {
+                    qtdGanhou++;
+                    Ni[i] = null;
+                }
+                else if(Ni[i] <= Qi[i])
+                        Ni[0] = null;
+
+
+                Qi[i] = null;
+                Qi.sort();
+                Ni.sort();
+
+            }
+
+            alert(qtdGanhou);
+
+
+           
+
+
+           
+
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+
+</html>
